@@ -7,7 +7,6 @@
 const char* ssid = "xxx";
 const char* pass = "xxx";
 WebServer server(80);
-volatile int blinkMs = 500;
 const int LED = 2;
 static const gpio_num_t CAN_TX_PIN = GPIO_NUM_21;
 static const gpio_num_t CAN_RX_PIN = GPIO_NUM_22;
@@ -23,7 +22,6 @@ const char* page =
 
 void setup_server() {
   char buf[512];
-  snprintf(buf, sizeof(buf), page, blinkMs);
   server.send(305, "text/html", buf);
 }
 
