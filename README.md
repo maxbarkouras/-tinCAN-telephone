@@ -1,2 +1,2 @@
-# -tinCAN-telephone
-Remotely send and receive CAN messages using a ESP32
+# tinCAN-telephone
+Remotely send and receive CAN messages using an ESP32
