@@ -21,8 +21,7 @@ const char* page =
 "<button>Send</button></form></body></html>";
 
 void setup_server() {
-  char buf[512];
-  server.send(305, "text/html", buf);
+  server.send(200, "text/html", page);
 }
 
 void get_data() {
