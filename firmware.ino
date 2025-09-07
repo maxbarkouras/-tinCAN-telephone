@@ -15,14 +15,13 @@ const char* page =
 "<!doctype html><html><body>"
 "<h2>CAN CONTROL</h2>"
 "<form method='POST' action='/set'>"
-"<input type='text' name='id', value='7FF', maxlength='3', size='1'>"
+"<input type='text' name='id', value='7FF', maxlength='3', size='4'>"
 "<form method='POST' action='/set'>"
-"<input type='text' name='val', value='FFFFFFFFFF', maxlength='16', size='17'>"
+"<input type='text' name='val', value='FFFFFFFFFFFFFFFF', maxlength='16', size='17'>"
 "<button>Send</button></form></body></html>";
 
 void setup_server() {
-  char buf[512];
-  server.send(305, "text/html", buf);
+  server.send(200, "text/html", page);
 }
 
 void get_data() {
