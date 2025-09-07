@@ -5,7 +5,7 @@ Remotely send and receive CAN messages over WiFi.
 - ESP32 (TWAI enabled)
 - CAN Transceiver
   
-**For OBD connections, you must also include**
+**For OBD connections, you must also include:**
   - Buck Converter (minimum 12V at 1A)
   - OBD2 Cable
 
