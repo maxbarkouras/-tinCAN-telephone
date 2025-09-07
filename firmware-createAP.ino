@@ -7,7 +7,6 @@
 const char* ap_ssid = "tinCAN";
 const char* ap_pass = "xxx";
 WebServer server(80);
-volatile int blinkMs = 500;
 const int LED = 2;
 static const gpio_num_t CAN_TX_PIN = GPIO_NUM_21;
 static const gpio_num_t CAN_RX_PIN = GPIO_NUM_22;
@@ -16,14 +15,13 @@ const char* page =
 "<!doctype html><html><body>"
 "<h2>CAN CONTROL</h2>"
 "<form method='POST' action='/set'>"
-"<input type='text' name='id', value='7FF', maxlength='3', size='1'>"
+"<input type='text' name='id', value='7FF', maxlength='3', size='4'>"
 "<form method='POST' action='/set'>"
-"<input type='text' name='val', value='FFFFFFFFFF', maxlength='16', size='17'>"
+"<input type='text' name='val', value='FFFFFFFFFFFFFFFF', maxlength='16', size='17'>"
 "<button>Send</button></form></body></html>";
 
 void setup_server() {
   char buf[512];
-  snprintf(buf, sizeof(buf), page, blinkMs);
   server.send(305, "text/html", buf);
 }
 
@@ -54,7 +52,7 @@ void get_data() {
   server.send(303);
 }
 
-void blinkTask(void*) {
+void listen(void*) {
   ;
 }
 
