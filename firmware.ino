@@ -55,7 +55,7 @@ void get_data() {
 }
 
 void listen(void*) {
-  //here for listening integration
+  ;//here for listening integration
 }
 
 void setup() {
